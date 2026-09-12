@@ -47,48 +47,7 @@ jobs:
           # Create placeholder google-services.json if missing for CI build
           if [ ! -f app/google-services.json ]; then
             echo "Creating dummy app/google-services.json for CI..."
-            cat << 'EOF' > app/google-services.json
-{
-  "project_info": {
-    "project_number": "123456789012",
-    "project_id": "dummy-firebase-project",
-    "storage_bucket": "dummy-firebase-project.appspot.com"
-  },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:123456789012:android:abcdef1234567890",
-        "android_client_info": {
-          "package_name": "com.aistudio.protinews.kxwz"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDummyApiKeyForCIEnvironment12345"
-        }
-      ],
-      "services": {}
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:123456789012:android:abcdef1234567891",
-        "android_client_info": {
-          "package_name": "com.example"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDummyApiKeyForCIEnvironment12345"
-        }
-      ],
-      "services": {}
-    }
-  ],
-  "configuration_version": "1"
-}
-EOF
+            echo '{"project_info":{"project_number":"123456789012","project_id":"dummy-firebase-project","storage_bucket":"dummy-firebase-project.appspot.com"},"client":[{"client_info":{"mobilesdk_app_id":"1:123456789012:android:abcdef1234567890","android_client_info":{"package_name":"com.aistudio.protinews.kxwz"}},"oauth_client":[],"api_key":[{"current_key":"AIzaSyDummyApiKeyForCIEnvironment12345"}],"services":{}},{"client_info":{"mobilesdk_app_id":"1:123456789012:android:abcdef1234567891","android_client_info":{"package_name":"com.example"}},"oauth_client":[],"api_key":[{"current_key":"AIzaSyDummyApiKeyForCIEnvironment12345"}],"services":{}}],"configuration_version":"1"}' > app/google-services.json
           fi
 
       - name: Build Debug APK
