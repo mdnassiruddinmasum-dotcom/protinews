@@ -1,0 +1,6 @@
+{
+  "name": "protinews",
+  "description": "Professional news portal with breaking news, category feeds, live ad containers, article reader, and admin management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
